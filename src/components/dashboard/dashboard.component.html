@@ -1,0 +1,65 @@
+
+<div class="relative1">
+  <h5 style="color: black">Marketing team</h5>
+  <br>
+  <br>
+  <h3 style="color: black">Storage</h3>
+  <ul style="color: black">My files</ul>
+  <li class="li"><a href="#" style="text-decoration:none;"><img src="../assets/img/folder%20.png">Analytices</a></li>
+  <li class="li" ><a href="#" style="text-decoration:none;"><img src="../assets/img/folder%20.png">Assets</a></li>
+  <li class="li"><a href="#"style="text-decoration:none;"><img src="../assets/img/folder%20.png">Marketing</a></li>
+  <li class="li"><a href="#" style="text-decoration:none;"><img src="../assets/img/folder%20.png">Templates</a></li>
+  <li class="li"><a href="#" style="text-decoration:none;"><img src="../assets/img/folder%20.png">Projects</a></li>
+  <li class="li"><a href="#"style="text-decoration:none;"><img src="../assets/img/folder%20.png">Projector Coures</a></li>
+  <div>
+    <p style="color: black">Shered with me</p>
+    <a href="#" style="text-decoration:none;">Recent</a><br>
+    <a href="#" style="text-decoration:none;">starred</a><br>
+    <a href="#" style="text-decoration:none;">trash</a><br>
+  </div>
+  <div>
+    <p style="color: black">Fockier</p>
+  </div>
+</div>
+<div  class="relative2"  >
+<h2 style="color: black">Folder</h2>
+<br>
+  <br>
+<breadcrumb (onSelectedOptionChanged)="onSelectedOptionChanged($event)" (onSelectedItemChanged)="onSelectedItemChanged($event)"
+    [items]="breadCrumbItems"></breadcrumb>
+<table  mat-table [dataSource]="dataSource" style="" >
+    <ng-container matColumnDef="icon">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let item">
+            <mat-icon>{{item.Icon}}</mat-icon>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let item" (click)="browse(item)" [class.folder]="item.IsFolder"> {{item.Name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="modifiedTime">
+        <th mat-header-cell *matHeaderCellDef> Last modified </th>
+        <td mat-cell *matCellDef="let item"> {{item.ModifiedTimeText}} </td>
+    </ng-container>
+    <ng-container matColumnDef="size">
+        <th mat-header-cell *matHeaderCellDef> Size </th>
+        <td mat-cell *matCellDef="let item"> {{item.SizeText}} </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let item">
+            <mat-icon class="delete" (click)="delete(item)">delete</mat-icon>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-toolbar>
+</mat-toolbar>
+</div>
+<div class="relative3">
+  <button  style="color: black;width: 150px ; height: 120px" (click)="setGoogleDrive()"><a  style="text-decoration:none;" href="https://drive.google.com/drive/?utm_source=fr&pli=1" ><img src="../assets/img/logoGoogleDrive.png" style="width: 50px ; height: 50px"> <br>Google drive</a></button>
+  <button style="color: black;width: 150px ; height: 120px; margin-left: 40px;"><a><img src="../assets/img/logoDropBox.png" style="width: 50px ; height: 50px"> <br>DropBox</a></button>
+  <button style="color: black;width: 150px ; height: 120px;    margin-left: 40px;"><a><img src="../assets/img/logoOneDrive.png" style="width: 50px ; height: 50px"> <br>oneDrive</a></button>
+</div>

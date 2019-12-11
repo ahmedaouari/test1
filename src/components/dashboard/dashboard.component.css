@@ -1,0 +1,39 @@
+table {
+    width: 100%;
+}
+th.mat-column-icon, td.mat-column-icon {
+    width: 40px;
+}
+.folder {
+    cursor: pointer;
+}
+
+.delete {
+    cursor: pointer;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.version {
+    font-size: 14px;
+}
+
+.relative2 {
+  position: relative;
+  top: -917px;
+  left: 268px;
+  width: 800px;}
+.relative1 {
+  position: relative;
+  top: -609px;
+  left: 81px;
+
+ }
+
+.relative3 {
+  position: relative;
+      top: -3346px;
+  left: 287px;
+}
